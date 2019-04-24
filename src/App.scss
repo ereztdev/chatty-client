@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  //background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,3 +31,16 @@
     transform: rotate(360deg);
   }
 }
+
+.Theme-dark {
+  background-color: #282c34;
+  color: #ffffff;
+}
+
+.Theme-light {
+  background-color: #ffffff;
+}
+.App.Theme-light{
+  color: #282c34;
+}
+//@import "styles/border_animation";

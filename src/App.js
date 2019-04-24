@@ -28,7 +28,7 @@
 //
 // export default App;
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.scss';
 
 const io = require('socket.io-client');
@@ -107,7 +107,7 @@ function App() {
 
   const roomSpawner = (rooms) =>{
    return rooms.map((value,index) => (
-      <button onClick={test} key={index}>{value}</button>
+      <button className='btn btn-outline-light m-5' onClick={test} key={index}>{value}</button>
     ));
   };
 
@@ -118,22 +118,23 @@ function App() {
   return (
     <div className={`App Theme-${theme}`}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <h1>
-          {inRoom && `You Have Entered ${getRoom()}`  }
-          {!inRoom && `Outside Room` }
-        </h1>
+        {/*<img src={logo} className="App-logo" alt="logo" />*/}
+        <h2 className='text-capitalize'>
+          {inRoom && `you've entered the ${getRoom()} room`  }
+          {!inRoom && `Pick a Room to discuss your current trade` }
+        </h2>
 
         <p>{messageCount} messages have been emitted</p>
         <div className='rooms--wrapper'>
           {(rooms.length > 0 || rooms.length < 6)? roomSpawner(rooms) : false}
         </div>
 
-        {/*{inRoom &&*/}
-        <button onClick={() => handleNewMessage(room)}>
+        {inRoom &&
+
+        <button type="button" className='btn btn-primary' onClick={() => handleNewMessage(room)}>
           Emit new message
         </button>
+        }
         {/*}
 
         <button onClick={() => handleSetTheme()}>
