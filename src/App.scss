@@ -44,3 +44,28 @@
   color: #282c34;
 }
 //@import "styles/border_animation";
+form {
+  width: 70%;
+}
+
+.chat{
+  button {
+    padding: 3vw
+  }
+}
+.theme-controller{
+  width: 75px;
+  height: 75px;
+  border: 1px solid white;
+  border-radius: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  svg{
+    color: #fc0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
