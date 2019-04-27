@@ -69,3 +69,17 @@ form {
     transform: translate(-50%,-50%);
   }
 }
+
+.chat_window--wrapper{
+  max-height: 33vw;
+  width: 70%;
+  background: #c3c3c3;
+  padding: 20px;
+  overflow: auto;
+  }
+.chat_window__message{
+  &:nth-child(even){
+    background: #9f9f9f;
+  }
+  text-align: left;
+}
