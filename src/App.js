@@ -123,7 +123,7 @@ function App() {
         </div>
 
         <div className='chat_window--wrapper'>
-          {messages.length === 0 ? <h1>ChatWindow.js</h1> : false}
+          {messages.length === 0 ? <h2>Chat Room Has No Messages</h2> : false}
           {messages.map(
             (value, index) => {
               return <div key={index} aria-rowcount={index+1} id={index+1} className='chat_window__message'>{value.user.id}: {value.data.message}</div>;
@@ -132,7 +132,7 @@ function App() {
         </div>
         <form>
           <div className="input-group mb-3 chat">
-            <textarea onKeyDown={detectEnter} placeholder="Write Something clever.."
+            <textarea disabled={!inRoom} onKeyDown={detectEnter} placeholder="Write Something clever.."
                       className="form-control custom-control chat_window__input" rows="3"/>
             <div className="input-group-append">
               <button onClick={chatHandler} className="btn btn-primary" type="submit">Send</button>
