@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     setRoomArray(roomArray);
     socket.on('RESPONSE_ROOM_MSGS', (data) => {
-      setMessages(data)
+      setMessages(data);
       chatMessagesWindow[0].scrollTop = chatMessagesWindow[0].scrollHeight;
     });
   }, []);
@@ -41,8 +41,6 @@ function App() {
   useEffect(() => {
     document.title = `Room: ${room ? room : ''}`;
   });
-
-
 
   const joinRoom = (e) => {
     if (e.target.textContent === room) {
@@ -70,13 +68,11 @@ function App() {
       e.preventDefault();
       e.persist();
       if (e.target.innerText === 'Clear') {
-        return textArea = '';
+        return textArea.value = '';
       }
-      // message = e.target.form[0].value;
     }
     if (message !== '') {
       socket.emit('new message', {message, room});
-      // setMessage({message, room});
     }
     textArea.value = '';
   };

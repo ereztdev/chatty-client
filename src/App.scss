@@ -39,10 +39,16 @@
 
 .Theme-light {
   background-color: #ffffff;
+  h2, button, p{
+    color: #282c34!important;
+  }
+  .room-button{
+    background: #c3c3c3;
+
+  }
+
 }
-.App.Theme-light{
-  color: #282c34;
-}
+
 //@import "styles/border_animation";
 form {
   width: 70%;
