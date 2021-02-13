@@ -8,7 +8,7 @@ into descriptive depth (gifs!) to explain how it works.
 * implementations still needed for production:
   - __Security:__ 
     - password/membership
-    - tokenization for endpoints
+    - 2FA ACL for endpoints
     - serverside .env with key (salt)
   - __Logic__
     - Hash userID for high traffic uniqueness
